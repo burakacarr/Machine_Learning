@@ -44,9 +44,14 @@ print(result2)
 
 result3 = pd.DataFrame(data=cinsiyet,index=range(22),columns=["cinsiyet"])
 print(result3)
-dataresukt= pd.concat([result1,result2,result3],axis=1)
+dataresult= pd.concat([result1,result2,result3],axis=1)
 
 print(dataresult)
+
+from sklearn.cross_validation import train_test_split
+
+x_train,x_test,y_train,y_test= train_test_split(dataresult,result3,test_size=0.33,random_state=0)
+
 
 
 
